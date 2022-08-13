@@ -29,7 +29,6 @@ tags: [GitHub Pages, Intro]
 3. 나 뿐만 아니라 다른 사람들도 같이 의견을 공유할 수 있도록
 4. 부지런해지기 위하여(<- 이거 중요)
    
-```console
-# Python
+```python
 print("Hello World! 잘 부탁드립니다!")
 ```
