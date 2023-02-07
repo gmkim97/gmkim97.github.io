@@ -8,12 +8,13 @@ tags: [Machine Learning, Anaconda, PyTorch, M1, Macbook Air]
 
 ## Introduction
 ---
-연구실에 Hard-working 용도의 Laptop이 있기에 어쩔 수 없이 기존에 들고 다니는 M1 Macbook Air를 가지고 PyTorch를 공부하게 되었습니다.   
-(물론 M1의 성능이 어느 정도인지 궁금한 것도 한 몫 하였지만요.)
+Since I recently bought M1 Macbook Air, which becomes famous for its performance by Apple's ARM chipset, I try to study and use PyTorch on my laptop.  
+Well, I also have computer with Linus OS, and it works really fine, but I'm just curious about its utility on Machine Learning with PyTorch.  
+In this page, I just want to share the procedure how I set up my M1 Macbook Air to use PyTorch.  
 
-다행스럽게도, 최근에는 Apple Silicon이 첫 등장한지 어느 정도 시간이 지났기에 점점 이를 업데이트를 통해서 Native로 호환시켜주는 추세입니다.  
-그래서 설정을 하는데 매우 쉬웠으며 그렇게 오랜 시간이 걸리지도 않았습니다. MacOS의 터미널에 친숙하다면 문제 없을 걸로 보입니다.  
-거기에 최근 PyTorch의 업데이트로 M1 CPU뿐만 아니라 GPU또한 이용해 성능을 가속시킬 수 있음을 확인하였습니다.
+Fortunately, It has been some time since Apple Silicon first appeared, and it becomes compatible with Apple M1 through various updates.  
+So, it won't take much time to prepare for the environment, if you are familiar with MacOS Terminal.  
+Plus, I checked that M1's GPU can be used to accelerate the performance by recent update of PyTorch.  
 
 ## Environment
 ---
@@ -28,21 +29,21 @@ tags: [Machine Learning, Anaconda, PyTorch, M1, Macbook Air]
 
 ### Install
 
-먼저 상황에 맞도록 Python 기반의 가상환경을 만들어주고 관리할 수 있는 Tool인 Anaconda를 설치해보도록 합시다.  
-이전에는 M1에 Native하게 지원을 하는 Anaconda가 없어서 miniforge라는 툴을 사용해야 했으나, 이후 2022년 5월 자 업데이트를 통해 가능하게 되었습니다!  
-따라서 구글 크롬을 설치하는 것 만큼이나 쉽죠.
+First, I installed Anaconda which can create virtual environments based on Python and manage them for each proper occasions.  
+Before the update, I need to utilize the tool called miniforge since there wasn't the Anaconda that supports M1 natively.  
+However, after the update on 2022.05., I can install Anaconda working on M1 chip.  
 
-1. 다음의 Link를 통해 Anaconda 홈페이지로 갑니다.
-    - [Anaconda](https://www.anaconda.com/)
-2. Get Additional Installers 밑에 사과 모양을 클릭
-3. 중간에 MacOS에서 `64-Bit (M1) Graphical Installer` 을 선택합니다. 
-    - `Anaconda3-2022.05-MacOSX-arm64.pkg` 파일이 다운로드될 것입니다.
-4. 클릭하여 설치합시다.
+1. Go to Anaconda website via following link.
+    - [Anaconda](https://www.anaconda.com/){:target="_blank"}
+2. Click the button with apple figure under "Get Additional Installers".
+3. Select `64-Bit (M1) Graphical Installer` of MacOS.
+    - `Anaconda3-2022.05-MacOSX-arm64.pkg` will be downloaded.
+4. Click the pkg file, and follow the instructions.
 5. Done
 
-> 설치를 완료하고 나서 Launchpad를 봐도 Anaconda 아이콘을 찾을 수 없을 것입니다.  
-이는 anaconda가 어플로써 설치되는 것이 아니라 터미널 상의 설정으로써 설치되기 때문입니다.  
-보통 GUI상의 Anaconda라고 한다면 `Anaconda Navigator`일 것인데, **아직 M1 맥에서는 지원하지 않습니다.**
+> After you finish the installation, you might not find any icon related to Anaconda on Launchpad.  
+This is because the Anaconda is installed as the setting on terminal, not the application.  
+Windows, and Linux have `Anaconda Navigator` which shows its operation on GUI, but **It is not supported on M1 Mac yet.**
 {: .prompt-info }
 
 
@@ -58,12 +59,15 @@ $ vi ~/.zshrc
 
 ### Create Environment
 
-PyTorch를 설치하기 이전, 따로 이를 위한 Work Environment를 만들어봅니다. 이 과정은 생략해도 무관합니다. 
+Before I install PyTorch, I made its own working environment solely for machine learning.  
+You can just skip this part.  
+
 ```console
 $ conda create -n {your_env_name} python==3.8 
 # Create new environment based on python version 3.8
 ```
-anaconda가 설치될 때의 python version은 3.9이나, 여기에서는 호환성을 위해 하나 낮추어서 3.8로 하겠습니다.
+Installed Anaconda is based on python version 3.9, but I downgraded the version to 3.8 for its compatibility.  
+
 ```console
 $ conda env list 
 # List all environments
@@ -80,20 +84,20 @@ $ conda activate {your_env_name}
 ![PyTorch](/assets/img/pytorch.jpeg){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
 
 ### Install
-다음으로 PyTorch를 설치해보도록 합시다. 이 또한 M1 Native한 PyTorch의 등장으로 아주 수월해졌습니다. 몇 번의 클릭으로 끝입니다.
+Next, I installed PyTorch on my working environment. This procedure also becomes easy thanks to the appearance of PyTorch which supports M1 natively.  
 
-1. 다음의 Link를 통해 PyTorch 설치 페이지로 갑니다.
-    - [PyTorch Get Started](https://pytorch.org/get-started/locally/)
-2. 현재의 상황에 맞게 설정 탭을 클릭합니다.
-    - 저희의 경우, `Stable (1.12.1)`, `Mac`, `Conda`, `Python`, `Default`를 선택해 줍니다.
+1. Go to the PyTorch installation website via following link.
+    - [PyTorch Get Started](https://pytorch.org/get-started/locally/){:target="_blank"}
+2. Select proper tabs depending on your computer settings.
+    - In my case, I chose `Stable (1.12.1)`, `Mac`, `Conda`, `Python`, `Default` tabs.
     ![PyTorch_3](/assets/img/pytorch_3.png){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
-    - PyTorch 1.12 버전부터 M1 GPU 가속을 가능케 합니다.
-3. 밑에 나오는 링크를 복사합니다.
-4. 앞서 띄운 {your_env_name}의 터미널 창에 붙여넣습니다.
+    - After PyTorch **version 1.12**, it enables M1 GPU acceleration.
+3. Copy the command line that appears on the page.
+4. Paste on the terminal of {your_env_name}.
     ```console
     $ conda install pytorch torchvision torchaudio -c pytorch
     ```
-5. 엔터 그리고 설치되기를 기다립니다.
+5. Press Enter and wait for the installation.
 6. Done
 
 ### Verification
@@ -112,7 +116,7 @@ $ python
 ```
 ![PyTorch_2](/assets/img/pytorch_2.png){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }   
 
-이상입니다. 감사합니다.  
+Thank you for reading!   
   
 ## Reference
 
