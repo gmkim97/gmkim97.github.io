@@ -9,7 +9,7 @@ tags: [Machine Learning, Anaconda, MacOS]
 ## Introduction
 ---
 
-- 이 노트는 MacOS의 Terminal 상에서 Anaconda를 사용하는데 있어 자주 사용한 Command들을 모아놓은 것들입니다.
+- This page includes several Anaconda commands that are frequently used on MacOS terminal. 
 <br>  
 
 ![Anaconda](/assets/img/anaconda.jpeg){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
@@ -21,77 +21,76 @@ tags: [Machine Learning, Anaconda, MacOS]
 
 ### conda env list
 
-- 나의 컴퓨터에 만들어져 있는 가상 환경들(environments)의 list를 보여줍니다.
-- 현재 자신이 있는 환경은 별표(*)로 표시됩니다.
+- It shows the list of virtual environments which are set on the computer.
+- Currently located environment is marked as asterisk(*).
 ![conda_env_list](/assets/img/conda_env_list.png){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
 
 ### conda activate {env_name}
 
-- {env_name}의 가상 환경으로 이동합니다.
+- It activates / moves to the environment called {env_name}.
 
 ### conda deactivate
 
-- 현재의 가상 환경에서 나와 default인 base로 돌아갑니다.
-
+- It deactivates current environment and moves back to base(default).
 
 ## Handling environments
 ---
 
 ### conda create -n {env_name} python={python_version}
 
-- 새로운 가상 환경을 만듭니다. 이때 이름은 {env_name}으로 합니다.
-- 특정 버전의 파이썬을 지정하여 설치할 수 있습니다. 여기에서 버전은 {python_version}을 따릅니다.
-- `-n` 대신 `--name` 또한 사용 가능합니다.
+- It creates new virtual environment with your own name, {env_name}.
+- You can install specific version of python. Here, the version follows your input command, {python_version}.
+- You can also use `--name` instead of `-n`. Both are valid.
 
 ### conda create --clone {cloned_env} -n {new_env}
 
-- {cloned_env}의 가상환경을 복제하여 {new_env} 이름의 환경을 새로 만듭니다.
-- `-n` 대신 `--name` 또한 사용 가능합니다.
+- It copies the property of given environment, {cloned_env}, and creates new one with name {new_env} depending on copied property.
+- You can also use `--name` instead of `-n`. Both are valid.
 
 ### conda env remove -n {env_name}
 
-- {env_name}이라는 이름의 가상 환경과 그 하위 package들 까지 모두 삭제합니다.
-- `-n` 대신 `--name` 또한 사용 가능합니다.
+- It removes the environment called {env_name} including its sub-packages.
+- You can also use `--name` instead of `-n`. Both are valid.
 
 ## Handling packages
 ---
 
 ### conda list
 
-- 현재의 가상 환경에 설치되어 있는 package들을 list 형태로 보여줍니다.
+- It shows the list of sub-packages which are installed under your current working environment.
 ![conda_list](/assets/img/conda_list.png){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
 
 ### conda install {pkg_name}
 
-- **현재 활성화된 가상 환경**에 {pkg_name}라는 이름의 package를 설치합니다.
+- It installs the package named {pkg_name} under **current activated environment**.
 
 ### conda install -n {env_name} {pkg_name}
 
-- **{env_name}라는 다른 가상 환경**에서 {pkg_name}라는 이름의 package를 설치합니다.
-- `-n` 대신 `--name` 또한 사용 가능합니다.
+- It installs the package named {pkg_name} under **designated environment called {env_name}**.
+- You can also use `--name` instead of `-n`. Both are valid.
 
 ### conda uninstall {pkg_name}
 
-- **현재 활성화된 가상 환경**에 {pkg_name}라는 이름의 package를 삭제합니다.
-- `uninstall` 대신 `remove`로 사용 가능합니다.
+- It uninstalls / removes the package named {pkg_name} under **current activated environment**.
+- You can also use `remove` instead of `uninstall`.
 
 ### conda uninstall -n {env_name} {pkg_name}
 
-- **{env_name}라는 다른 가상 환경**에서 {pkg_name}라는 이름의 package를 삭제합니다.
-- `uninstall` 대신 `remove`로 사용 가능합니다.
-- `-n` 대신 `--name` 또한 사용 가능합니다.
+- It uninstalls / removes the package named {pkg_name} under **designated environment called {env_name}**.
+- You can also use `remove` instead of `uninstall`.
+- You can also use `--name` instead of `-n`. Both are valid.
 
 ### conda update {pkg_name}
 
-- 현재 가상 환경에 설치되어 있는 {pkg_name}라는 이름의 package를 업데이트합니다.
+- It updates specific package called {pkg_name} which is previously installed on current environment.
 
 ### {pkg_name}
 
-- package를 실행합니다.
-- 예를 들어, `python`이나 `jupyter-notebook` 등이 있습니다.
-
+- It runs installed package.
+- For instance, you can run `python`, or `jupyter-notebook`.
 
 ## Reference
+---
 
-- [Conda CheatSheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
-- [What is the difference between conda uninstall and conda remove?](https://stackoverflow.com/questions/71306374/what-is-the-difference-between-conda-uninstall-and-conda-remove)
+- [Conda CheatSheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf){:target="_blank"}
+- [What is the difference between conda uninstall and conda remove?](https://stackoverflow.com/questions/71306374/what-is-the-difference-between-conda-uninstall-and-conda-remove){:target="_blank"}
