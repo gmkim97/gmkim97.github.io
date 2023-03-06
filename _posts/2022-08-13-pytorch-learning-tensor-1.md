@@ -1,5 +1,5 @@
 ---
-title: PyTorch Learning_CH1_1. Tensor Manipulation
+title: PyTorch Learning_Tensor Manipulation (1)
 author: GMKim
 date: 2022-08-13 11:45:00 +0900
 categories: [Machine Learning, PyTorch]
@@ -8,33 +8,33 @@ tags: [Machine Learning, PyTorch, Tensor]
 
 ## Introduction
 
-이 정리는 다음의 강의 노트를 보며 공부한 것을 기반으로 하고 있습니다.
-- [PyTorch로 시작하는 딥 러닝 입문](https://wikidocs.net/book/2788)
+This note is based on the lecture note (to be exact, the wiki documentary) written in Korean.  
+It is about the introductory informations of Deep Learning with PyTorch.
+- [PyTorch로 시작하는 딥 러닝 입문(KOR)](https://wikidocs.net/book/2788){:target="_blank"}
 
-이번 Chapter에서는 Tensor가 무엇인지, 어떻게 할당시키는지, 그리고 이를 다루는 여러 함수들에 대해 알아봅니다.  
+Here, I'd like to write **what is Tensor**, **how can we allocate it**, and **several functions to deal with**.
 <br>
 
 ---
-## CH1_1. Tensor Manipulation - Part 1
+## Tensor Manipulation - Part 1
 
 ### 1. What's Tensor?
 
-- Tensor 정의  
-    - 우선 Wikipedia에서는 Tensor를 다음과 같이 정의하고 있습니다.  
+- Definition
+    - First, Wikipedia defines the Tensor as follows :  
     ```
-    선형대수학에서 텐서(Tensor)는 선형 관계를 나타내는 다중선형대수학의 대상이다.  
+    In mathematics, a tensor is an algebraic object that describes a multilinear relationship between sets of algebraic objects related to a vector space.
     ```
-    사실 바로 와닿지 않기에 다음과 같이 단순하게 생각해 보기로 하였습니다.  
+    Since it sounds quite difficult and complicated, let's make it easier and simple.
     ```
-    텐서는 다차원 배열(Multi-dimensional Arrays)을 나타내는 도구이다.
-    ```
+    A tensor is the tool to represent a multi-dimensional arrays.
+    ``` 
     ![ch1_1](/assets/img/CH1/ch1_1.jpeg){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
 
 <br>  
 
 - 1D with Numpy
-    - 다차원 배열을 나타내는 데에 있어 저희는 Python에서 numpy라는 Library를 주로 사용해 왔습니다. 복습 겸 한번 다시 보도록 하죠.  
-    먼저 단순히 1차원 행렬로 표현해 봅시다.
+    - To represent a multi-dimensional array, we usually use numpy library at Python. As a simple review, let's write 1-D array using numpy array.  
 
 ```python
 import numpy as np
@@ -89,7 +89,7 @@ print(arr[2:]) ## Stop at end
 <br>  
 
 - 2D with Numpy
-    - 다음으로 numpy를 통해 2차원 행렬을 나타내 봅시다.
+    - Next, let's write 2-D array using numpy array.  
 
     ```python
     import numpy as np
@@ -114,13 +114,13 @@ print(arr[2:]) ## Stop at end
 <br>  
 
 - Array vs Tensor
-    - 그렇다면 굳이 numpy의 array를 놔두고 torch를 이용해 tensor를 쓰는 이유는 무엇일까요?  
-    이에 대해 찾아보던 중 Konstantinos Giorgas 님이 포스팅한 `What is the Difference Between NumPy Arrays and Tensorflow Tensors?` 글을 발견하게 되었습니다. (물론 저희는 Tensorflow가 아니라, Pytorch의 Tensor이긴 하지만, 어쨋든.)   
-    - 즉, 요약하자면 Tensor는  
-        1. GPU Accleration이 가능하다.  
-        2. 자동으로 differentiation이 가능하다.
-        3. 숫자 뿐만 아니라, string과 같은 type의 data 또한 다룰 수 있다.
-    - 따라서, 단순히 Machine Learning 보다 부하가 더 걸리는 Deep Learning에 있어 Tensor를 사용하는 것이 더 적합하다고 볼 수 있겠군요.
+    - Then, why do we need to use tensor from Pytorch instead of numpy array?  
+    I searched for the reason and found the post, `What is the Difference Between NumPy Arrays and Tensorflow Tensors?` written by **Konstantinos Giorgas**. Of course, we are going to use Pytorch Tensor instead of Tensorflow, anyway...  
+    - To summarize it,
+        1. Tensor is able to perform GPU Acceleration.
+        2. Tensor can differentiate automatically.
+        3. Tensor can handle various data type including not only the number but also the string.
+    - Thus, using Tensor is more appropriate for Deep Learning which operates heavier than simple Machine Learniing.
 
 <br>  
 
@@ -128,8 +128,8 @@ print(arr[2:]) ## Stop at end
 ### 2. Tensor Allocation
 
 - 1D with Pytorch
-    - 이번엔 위에서 정의한 1차원 array들을 Pytorch의 torch library를 이용하여 재현해 보도록 하겠습니다.  
-    한 가지 다른 점이라면, Output 되는 data가 단순히 array가 아닌 tensor라는 점이 되겠군요.
+    - This time, let's write 1-D array using torch library from Pytorch.  
+    Note that the output will be tensor type, not array type.  
 
     ```python
     import torch
@@ -154,7 +154,7 @@ print(arr[2:]) ## Stop at end
 <br>  
 
 - 2D with Pytorch
-    - 이번엔 차원이 2인 array 입니다.
+    - Let's write 2-D array with Pytorch tensor.  
 
     ```python
     t_2 = torch.FloatTensor([[1.0,2.0,3.0],[4.0,5.0,6.0],[7.0,8.0,9.0],[10.0,11.0,12.0]])
@@ -200,8 +200,8 @@ print(arr[2:]) ## Stop at end
 <br>  
 
 - Size of Tensors
-    - numpy의 array이든, torch의 tensor이든, 앞으로 함수를 사용하는데 있어 매우 중요한 것은 **Tensor의 크기**를 파악하는 것 입니다. 이에 대해 나름대로 정리를 해보았습니다.  
-    (참고로 torch에서 말하는 dimension과 numpy에서 나오는 axis는 동일한 의미입니다. 여기에서는 **torch** 기준으로 보겠습니다.)
+    - Whether it's numpy array or torch tensor, it is very important to figure out the **size of Tensor** for using methods or functions. Here, I try to organize it in my words.
+    (Note that the dimension of torch and axis of numpy share similar meaning. And this explanation is based on **torch**)
     
 ![ch1_2](/assets/img/CH1/ch1_2.jpeg){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
 ```
@@ -223,7 +223,7 @@ Shape of tensor : torch.Size([dim=0, dim=1, dim=2 ... ])
     Shape of tensor : torch.Size([# of Depth, # of Row, # of Column])
     Shape of tensor : torch.Size([3, 2, 3])
     ```
-- 차원이 하나씩 추가될 때, 이 추가된 영역이 앞의 차원에 붙는다는 것에 주의합니다.
+- Notice that the dimension is added in front of existing dimensions. 
 
 <br>  
 
@@ -280,21 +280,20 @@ print(tensor1.mul(tensor2)) ## This result is same as the result of *
 <br>  
 
 - (Tip) Rules for Element-wise multiplication
-    - 위의 **Broadcasting**이나, **Multiplication**에서 나온 결과를 보면 우리가 아는 행렬의 덧셈, 뺄셈, 곱셈 법칙이 아닌, **Element-wise**한 계산 법칙이 적용되어 자동으로 Size를 맞춰주는 것을 알 수 있습니다. 다음은 이에 따르기 위해 만족되어야 하는 규칙입니다.
-    
-    1. 각 Tensor는 적어도 한 개 이상의 dimension을 가지고 있어야 합니다.
-    2. 각 Tensor들을 비교하여 다음의 조건들 중 하나가 만족되어야 합니다.
-        - 모든 dimension size들이 똑같다.
-        - dimension size들 중 하나가 1이다.
-        - dimension size들 중 하나가 존재하지 않는다.
+    - From the results of **Broadcasting** or **Multiplication**, we can recognize that it automatically fits the size because of the **Element-wise** operation, not the matrix operations. These are the rules to satisfy.
 
+    1. Each Tensor should have at least one dimension.
+    2. One of the following rules is satisfied between two Tensors.
+        - Both sizes of dimension are identical.
+        - One of the size should be 1.
+        - One of the size should not exist.
 <br>
  
 ---
 ## Reference
 
-- [PyTorch로 시작하는 딥 러닝 입문](https://wikidocs.net/book/2788)
+- [PyTorch로 시작하는 딥 러닝 입문(KOR)](https://wikidocs.net/book/2788){:target="_blank"}
 
-- [Understanding dimensions in PyTorch](https://towardsdatascience.com/understanding-dimensions-in-pytorch-6edf9972d3be)
+- [Understanding dimensions in PyTorch](https://towardsdatascience.com/understanding-dimensions-in-pytorch-6edf9972d3be){:target="_blank"}
 
-- [Difference between Arrays and Tensors](https://python.plainenglish.io/numpy-arrays-vs-tensorflow-tensors-95a9c39e1c17)
+- [Difference between Arrays and Tensors](https://python.plainenglish.io/numpy-arrays-vs-tensorflow-tensors-95a9c39e1c17){:target="_blank"}

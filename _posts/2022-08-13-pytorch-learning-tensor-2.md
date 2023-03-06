@@ -1,5 +1,5 @@
 ---
-title: PyTorch Learning_CH1_2. Tensor Manipulation
+title: PyTorch Learning_Tensor Manipulation (2)
 author: GMKim
 date: 2022-08-13 11:45:00 +0900
 categories: [Machine Learning, PyTorch]
@@ -8,19 +8,20 @@ tags: [Machine Learning, PyTorch, Tensor]
 
 ## Introduction
 
-이 정리는 다음의 강의 노트를 보며 공부한 것을 기반으로 하고 있습니다.
-- [PyTorch로 시작하는 딥 러닝 입문](https://wikidocs.net/book/2788)
-
-이번 Chapter에서는 Tensor를 다루는 여러 함수들에 대해 마저 알아봅니다.  
+This note is based on the lecture note (to be exact, the wiki documentary) written in Korean.  
+It is about the introductory informations of Deep Learning with PyTorch.
+- [PyTorch로 시작하는 딥 러닝 입문(KOR)](https://wikidocs.net/book/2788){:target="_blank"}
+  
+Here, I'd like to write more about some functions to handle Pytorch Tensor.
 <br>
 
 ---
-## CH1_2. Tensor Manipulation - Part 2
+## Tensor Manipulation - Part 2
 
 ### 3. Handling Tensors - Part 2
 
 - Mean
-    - 말 그대로 Tensor의 원소들에 대한 평균값을 도출합니다. dimension parameter(dim)로 계산되는 특정 위치를 지정할 수 있습니다.
+    - It gives the mean value of Tensor components. You can designate specific row or column using dimension parameter(dim).
 
 ```python
 tensor1 = torch.FloatTensor([1, 2]) # 1D Size : 1 x 2
@@ -56,7 +57,7 @@ print(tensor2.mean(dim=-1))
 <br>  
 
 - Sum
-    - 말 그대로 Tensor 원소들의 합을 도출합니다. 이것 또한 dimension parameter(dim)로 계산되는 특정 위치를 지정할 수 있습니다.
+    - It gives the total sum of Tensor components. You can also designate specific row or column using dimension parameter(dim).
 
 ```python
 tensor1 = torch.FloatTensor([1, 2]) # 1D Size : 1 x 2
@@ -94,8 +95,8 @@ print(tensor2.sum(dim=-1))
 <br>  
 
 - (Tip) How to sum / mean at specific dimension?
-    - 앞서 보았던 dimension parameter(dim)를 지정하였을 때 이에 따라 계산되는 과정을 나타내 보았습니다.
-    - 예시는 앞에서의 `Size of Tensors`를 다시 가져오겠습니다.
+    - Here, I'm going to show you the process how it calculates when designating dimension parameter(dim).
+    - Examples are brought from previous `Size of Tensors` chapter.
     - Keypoint : **Collapse the 'dimension(axis)'**
     1. 2D Tensor  
     ![ch1_3](/assets/img/CH1/ch1_3.jpeg){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
@@ -211,7 +212,7 @@ print(t.argmax(dim=0)) ## Result is same as the one from t.max(dim=0)[1]
 <br>  
 
 - View
-    - View는 Tensor의 형태를 **전체 Size가 유지된다**는 조건 하에 Reshape 시켜주는 함수입니다.
+    - It reshapes the size of Tensor in condition that the total size is maintained.
 
 ```python
 t3 = torch.FloatTensor([[[0, 1, 2],[3, 4, 5]],[[6, 7, 8],[9, 10, 11]]])
@@ -274,8 +275,8 @@ print(t3.view([2,3,2])) ## Shape must be maintained (2x2x3)=(2x3x2)=12
 <br>  
 
 - Squeeze & Unsqueeze
-    - Squeeze : 값이 1인 차원을 제거해줍니다. 즉, 전체 dimension이 줄어드는 결과가 나옵니다.
-    - Unsqueeze : 원하는 위치에 값이 1인 차원을 추가해줍니다. 즉, 전체 dimension이 증가하는 결과가 나옵니다.
+    - Squeeze : It removes the dimension of value 1, and the total dimension of Tensor **decreases**.
+    - Unsqueeze : It adds the dimension of value 1 at specific location, and the total dimension of Tensor **increases**.
 
 ```python
 t2 = torch.FloatTensor([[0],[1],[2]])
@@ -327,8 +328,8 @@ print(t1.unsqueeze(dim=1))
 <br>  
 
 - Concatenate & Stack
-    - Concatenate : 전체 차원은 그대로 유지시키면서 해당되는 dimension에 맞추어 Tensor를 덧붙여 줍니다.
-    - Stack : 전체 차원을 하나 증가시키며 (Ex. 2 -> 3) 추가된 차원을 따라 Tensor를 덧붙여 줍니다.
+    - Concatenate : It concatenates additional Tensor **maintaining the total dimension.**
+    - Stack : It stacks additional Tensor **increasing the total dimension** (Ex. dim 2 -> 3)
 
 ```python
 # Concatenate
@@ -425,7 +426,7 @@ print(torch.stack([x,y,z], dim=2)) ## 2 x 2 x 3
 <br>  
 
 - ones_like & zeros_like
-    - _like의 의미는 **앞서 정의된 Tensor와 동일한 크기를 가진다**는 것입니다. 즉 이는 Size가 정의된 ones / zeros와 동일한 결과를 가집니다.
+    - **_like** means that **it will have the same dimension with defined Tensor**. Thus, it gives the result of ones or zeros with designated size.
 
 ```python
 x = torch.randint(high=10, size=(2,3))
@@ -472,7 +473,7 @@ print(t0_1)
 <br>  
 
 - In-place operation
-    - 각 함수의 뒤에 In-place를 적용할 경우, 초반에 정의한 변수에 결과값이 계속해서 저장 및 누적됩니다. 
+    - If you apply In-place operation at the end of each function, you can save or accumulate ongoing results at first defined variable.
 
 ```python
 x = torch.FloatTensor([[1, 2],[3, 4]])
@@ -512,5 +513,5 @@ print(x)
 ---
 ## Reference
 
-- [PyTorch로 시작하는 딥 러닝 입문](https://wikidocs.net/book/2788)
-- [Understanding dimensions in PyTorch](https://towardsdatascience.com/understanding-dimensions-in-pytorch-6edf9972d3be)
+- [PyTorch로 시작하는 딥 러닝 입문(KOR)](https://wikidocs.net/book/2788){:target="_blank"}
+- [Understanding dimensions in PyTorch](https://towardsdatascience.com/understanding-dimensions-in-pytorch-6edf9972d3be){:target="_blank"}
