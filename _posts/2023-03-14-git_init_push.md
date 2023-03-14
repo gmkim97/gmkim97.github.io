@@ -21,16 +21,16 @@ At Git's workflow structure, there are 4 stages : Working Directory, Staging Are
 From Working Directory to Local Repository, they have their own roles at **local hardware**, and Remote Repository refers to **Github**.  
 
 1. Working Directory
-    : Working Directory is similar to our working desk. We can freely modify, move, or delete some files in here. Before we add to Staging Area, Git doesn't track these revisions and recognizes them as untracked ones.
+    : `Working Directory` is similar to our working desk. We can freely modify, move, or delete some files in here. Before we add to Staging Area, Git doesn't track these revisions and recognizes them as untracked ones.
 
 2. Staging Area
-    : After you add the files from Working Directory, Your files will be on Staging Area. Before you commit the data to Local Repository, they are on stage tracking by Git.
+    : After you add the files from Working Directory, Your files will be on `Staging Area`. Before you commit the data to Local Repository, they are on stage tracked by Git.
 
 3. Local Repository
-    : Local Repository is the place where the Git truly memorize the history of modification about your files at local. Pushed files of Local Repository finally store in your remote repository.
+    : `Local Repository` is the place where the Git truly memorizes the history of modification about your files at local. Pushed files of Local Repository finally store in your remote repository.
 
 4. Remote Repository
-    : The main copy of your files on Github server. Anyone can pull or clone your files (except for private option) which are stored in this Remote Repository.
+    : The main copy of your files on Github server. Anyone can pull or clone your files (except for private option) which are stored in this `Remote Repository`.
 
 ![Git_1](/assets/img/git_1.jpeg){:style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }_Git Workflow Diagram ([Image Source](https://dev.to/tauag/quick-start-guide-to-git-2of5){:target="_blank"})_
 <br>
