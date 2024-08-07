@@ -3,13 +3,13 @@ title: How to handle Git? (1) - Clone, Init, Push
 author: GMKim
 date: 2023-03-14 15:05:00 +0900
 categories: [Git]
-tags: [Git, Github]
+tags: [Git, GitHub]
 ---
 
 ## Introduction
 
 Since it is difficult to handle a lot of codes from different project members, most developers or researchers use [Github](https://github.com/){:target="_blank"} as their remote storage (repository).  
-Unlike other cloud services like Google Drive, Onedrive, and Dropbox, Github requires some basic knowledge about Git and its command.  
+Unlike other cloud services like Google Drive, OneDrive, and Dropbox, Github requires some basic knowledge about Git and its command.  
 Thus, throughout several pages, I'd like to simply organize the concepts with command-lines about Git.  
 <br>
 
