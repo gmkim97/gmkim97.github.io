@@ -10,7 +10,7 @@ $sidebar-width-large: 350px !default;  /* screen width: >= 1650px */
 
 /* tabs of sidebar */
 
-$tab-count: 5 !default;   /* backward compatible (version <= 4.0.2) */
+$tab-count: 5 !default;   /* backward compatible (version <= 4.0.2) */  /* default: 5 !default */
 $tab-height: 3rem !default;
 $tab-cursor-height: 1.6rem !default;
 

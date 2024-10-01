@@ -1,10 +1,7 @@
 ---
-title: About
-icon: fas fa-info-circle
-order: 4
----
-
-## Hello, Everyone!
+title: Home
+permalink: /
+order: 1
 ---
 
 ![About_1](/assets/img/blog_about_1.jpg){:width="80%" height="auto" style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }

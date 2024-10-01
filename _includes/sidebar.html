@@ -31,12 +31,13 @@
   <ul class="w-100">
 
     <!-- home -->
-    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+    <!-- <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
       <a href="{{ '/' | relative_url }}" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
         <span>{{ site.data.locales[lang].tabs.home | upcase }}</span>
       </a>
-    </li>
+    </li>  ## revised -->
+
     <!-- the real tabs -->
     {% for tab in site.tabs %}
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
@@ -48,7 +49,17 @@
       </a>
     </li> <!-- .nav-item -->
     {% endfor %}
-
+    <li class="nav-item{% if page.title == 'Projects' or page.collection == 'posts' %}{{ "
+        active"
+        }}{%
+        endif
+        %}">
+        <a href="{{ site.paginate_path | replace: '/:num', '' | relative_url }}"
+          class="nav-link">
+            <i class="fa-fw fas fa-pen ml-xl-3 mr-xl-3 unloaded"></i>
+            <span>PROJECTS</span>
+        </a>
+    </li>
   </ul> <!-- ul.nav.flex-column -->
 
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
@@ -87,6 +98,7 @@
       {% endif %}
 
     {% endfor %}
+    
 
   </div> <!-- .sidebar-bottom -->
 
