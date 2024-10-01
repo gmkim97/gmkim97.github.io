@@ -6,7 +6,7 @@ order: 1
 
 ![About_1](/assets/img/blog_about_1.jpg){:width="80%" height="auto" style="border:1px solid #eaeaea; border-radius: 7px; padding: 0px;" }
 
-Welcome to my website. My name is Gyeongmin Kim (GM Kim), and I am currently in the Master’s course in the [Helper Lab](https://hlab.skku.edu/){:target="_blank"} at the [Department of Intelligent Robotics](https://robot.skku.edu/robot_en/index.do){:target="_blank"}, Sungkyunkwan University, advised by Professor [Mun-Taek Choi](https://robot.skku.edu/robot_en/faculty.do?mode=view&perId=LZStrBwOQlgzg6gdgkgDwIYCkDCAhATAUzABhgHEBOHALQEEBeaoA%20&){:target="_blank"}.  
+Hello, and welcome to my website. My name is Gyeongmin Kim (GM Kim), and I am currently in the Master’s course in the [Helper Lab](https://hlab.skku.edu/){:target="_blank"} at the [Department of Intelligent Robotics](https://robot.skku.edu/robot_en/index.do){:target="_blank"}, Sungkyunkwan University, advised by Professor [Mun-Taek Choi](https://robot.skku.edu/robot_en/faculty.do?mode=view&perId=LZStrBwOQlgzg6gdgkgDwIYCkDCAhATAUzABhgHEBOHALQEEBeaoA%20&){:target="_blank"}.  
 
 My research interest includes:
 - Human-Robot Interaction
