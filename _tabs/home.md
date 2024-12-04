@@ -14,7 +14,7 @@ My research interest includes:
 - Robot Learning
 - Computer Vision
 
-Throughout several research experiences and competitions, I have gained a broad range of skills not only from mechanical design but also from software algorithms. Of course, I’m still working hard on deep reinforcement learning and data-driven control.  
+Throughout several research experiences and competitions, I have gained a broad range of skills not only from mechanical design but also from software algorithms. Of course, I’m still working hard on deep learning and data-driven control.  
 
 If you want to get more information about me in detail, you can check my CV ([PDF](../assets/pdf/Curriculum_Vitae.pdf){:target="_blank"}; updated 2024/12/03) or contact me via e-mail ([hn04008@skku.edu](mailto:hn04008@skku.edu)).
 
