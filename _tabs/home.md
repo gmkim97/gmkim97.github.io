@@ -16,6 +16,6 @@ My research interest includes:
 
 Throughout several research experiences and competitions, I have gained a broad range of skills not only from mechanical design but also from software algorithms. Of course, I’m still working hard on deep learning and data-driven control.  
 
-If you want to get more information about me in detail, you can check my CV ([PDF](../assets/pdf/Curriculum_Vitae_250814.pdf){:target="_blank"}; updated 2025/08/14) or contact me via e-mail ([kgm04008@gmail.com](mailto:kgm04008@gmail.com)).
+If you want to get more information about me in detail, you can check my CV ([PDF](../assets/pdf/Curriculum_Vitae_260317.pdf){:target="_blank"}; updated 2026/03/17) or contact me via e-mail ([kgm04008@gmail.com](mailto:kgm04008@gmail.com)).
 
 
