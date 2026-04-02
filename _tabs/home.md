@@ -16,6 +16,6 @@ My primary research interests focus on:
 
 Through various research projects and competitions, I have built a strong foundation in both mechanical design and software algorithms. I am highly motivated to continuously advance my knowledge and practical skills, particularly in the intersection of physics and data-driven methodologies.  
 
-If you want to get more information about me in detail, you can check my CV ([PDF](../assets/pdf/Curriculum_Vitae_260401.pdf){:target="_blank"}; updated 2026/04/01) or contact me via e-mail ([kgm04008@gmail.com](mailto:kgm04008@gmail.com)).
+If you want to get more information about me in detail, you can check my CV ([PDF](../assets/pdf/Curriculum_Vitae_260402.pdf){:target="_blank"}; updated 2026/04/02) or contact me via e-mail ([kgm04008@gmail.com](mailto:kgm04008@gmail.com)).
 
 
